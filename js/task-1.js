@@ -1,9 +1,3 @@
-Перед звільненням розробник зламав вихідний код управління акаунтами користувачів нашого сервісу доставки їжі. 
-Виконай рефакторинг методів об'єкта customer, розставивши відсутні this під час звернення до властивостей об'єкта.
-
-Використай цей стартовий код і виконай рефакторинг. 
-Після оголошення об'єкта ми додали виклики методів. 
-У консоль будуть виведені результати їх роботи.Будь ласка, нічого там не змінюй.
 
 const customer = {
   username: "Mango",
@@ -24,8 +18,8 @@ const customer = {
     return this.orders;
   },
   addOrder(cost, order) {
-    this.balance -= cost - cost * discount;
-    orders.push(order);
+    this.balance = cost - cost * this.discount;
+    this.orders.push(order);
   },
   // Change code above this line
 };
