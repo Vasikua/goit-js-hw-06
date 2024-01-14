@@ -11,15 +11,14 @@ class Storage {
     } 
 
     addItem(newItem) {
-        return this.#items.push(newItem);
+       this.#items.push(newItem);
     } 
-    
+
     removeItem(itemToRemove) {
         const deleteItem = this.#items.indexOf(itemToRemove)
-        if (deleteItem) {
+        if (deleteItem !== -1) {
             this.#items.splice(deleteItem, 1)
         }    
-        return this.items
     } 
 }
 
